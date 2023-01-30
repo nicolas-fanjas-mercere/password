@@ -1,3 +1,5 @@
+import hashlib
+
 mdp = input("Bon mec pour créer un mot de passe il faut: 8 caractères, 1 Maj, 1 minuscule, 1 chiffre, 1 @ : ")
 
 def verif_taille_maxilmal(mdp):
@@ -25,7 +27,7 @@ def verif_chiffre(mdp):
     return False
 
 def verif_caracetere_spe(mdp):
-    speciale_caracetere = "!@#\$%\^&\*"
+    speciale_caracetere = "!@#$%^&*"
     for char in mdp:
         if char in speciale_caracetere:
             return True
@@ -42,3 +44,7 @@ while not mdp_valide(mdp):
     mdp = input("Dcp je me repete 8 caractères, 1 Maj, 1 minuscule, 1 chiffre, 1 @ ")
 
 print("Hmmmm il semblerait que tu sois moins bête que ce que j'imaginais")
+
+# Cryptage du mot de passe
+mdp_hache = hashlib.sha256(mdp.encode())
+print("Le mot de passe crypté est :", mdp_hache.hexdigest())
