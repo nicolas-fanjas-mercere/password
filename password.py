@@ -45,6 +45,6 @@ while not mdp_valide(mdp):
 
 print("Hmmmm il semblerait que tu sois moins bête que ce que j'imaginais")
 
-# Cryptage du mot de passe
+# Cryptage du mot de passe(j'ai un doute dessus)
 mdp_hache = hashlib.sha256(mdp.encode())
 print("Le mot de passe crypté est :", mdp_hache.hexdigest())
