@@ -3,7 +3,7 @@ import hashlib
 mdp = input("Bon mec pour creer un mot de passe il faut: 8 caracteres, 1 Maj, 1 minuscule, 1 chiffre, 1 @ : "),
 
 def verif_taille_maxilmal(mdp):
-    if len(mdp)  8:
+    if len(mdp) > 8:
         return False
     else:
         return True
